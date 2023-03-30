@@ -29,4 +29,3 @@ function newItem() {
 }
   // Reorder of items:
   $('#list').sortable();
-

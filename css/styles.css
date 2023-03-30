@@ -7,12 +7,14 @@ background: white;
 }
 
 .container{
-background: linear-gradient(40deg, rgb(237, 146, 146), rgb(215, 157, 157), rgb(235, 235, 158), rgb(175, 228, 175), rgb(159, 159, 212), rgb(9, 199, 205));
 padding: 20px;
 width: 300px;
+height: fit-content;
 margin: 0 auto;
 margin-top: 40px;
-border-radius: 5px;}
+border-radius: 20px;
+border: 1px solid black;
+}
 
 form {
 display: inline-block;
