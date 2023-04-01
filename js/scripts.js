@@ -4,6 +4,7 @@ function newItem() {
   if (inputValue === '') {
     alert("You must write something.");
   } else {
+    let task = inputValue;
     let li = $('<li></li>');
     li.append(inputValue);
     $('#list').append(li);
@@ -14,11 +15,20 @@ function newItem() {
       updateLocalStorage();
     }
     li.on("dblclick", crossOut);
+
+    // Edit item:
+    function editItem() {
+      li.attr('contenteditable', true);
+      li.focus();
+    }
+    li.on("click", editItem);
  
-    // Delete button "X":
-    let crossOutButton = $('<crossOutButton>X</crossOutButton>');
-    li.append(crossOutButton);
-    crossOutButton.on("click", function() {
+    // Delete button:
+    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task');
+    let removeIcon = $('<i></i>').addClass('bi bi-x');
+    removeButton.append(removeIcon);
+    li.append(removeButton);
+    removeButton.on("click", function() {
       li.remove();
       // Remove the task from localStorage:
       let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -29,11 +39,7 @@ function newItem() {
       }
     });
 
-    // Add class "delete" from css:
-    function deleteListItem() {
-      li.addClass("delete");
-    }
-      // Save the task to localStorage:
+    // Save the task to localStorage:
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push(inputValue);
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -55,10 +61,19 @@ $(document).ready(function() {
     }
     li.on("dblclick", crossOut);
 
+    // Edit item:
+    function editItem() {
+      li.attr('contenteditable', true);
+      li.focus();
+    }
+    li.on("click", editItem);
+
     // Delete button "X":
-    let crossOutButton = $('<crossOutButton>X</crossOutButton>');
-    li.append(crossOutButton);
-    crossOutButton.on("click", function() {
+    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task');
+    let removeIcon = $('<i></i>').addClass('bi bi-x');
+    removeButton.append(removeIcon);
+    li.append(removeButton);
+    removeButton.on("click", function() {
       li.remove();
       let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
       let index = tasks.indexOf(task);

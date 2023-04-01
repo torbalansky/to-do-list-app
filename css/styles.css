@@ -5,6 +5,7 @@
 	--color2: white;
 	--color3: rgb(247, 206, 206);
 	--color4: rgb(198, 221, 235);
+	--color5: red;
 	--container-color:  rgb(224, 245, 247);
 	--font-size: 20px;
 	--font-size2: 14px;
@@ -77,10 +78,11 @@ li:hover{
   cursor: pointer;
  }
 
-li > crossOutButton {
-	background-color: var(--color3);
+.btn {
+	background-color:var(--color5);
+	color: var(--color2);
 	float: right;
-	color:var(--color1);
-	border-radius: 2.5px;
-	padding: 1px;
+	border-radius: 10px;
+	cursor: pointer;
+	border:none;
 }
