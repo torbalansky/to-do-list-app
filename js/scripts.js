@@ -20,7 +20,13 @@ function newItem() {
     li.append(crossOutButton);
     crossOutButton.on("click", function() {
       li.remove();
-      updateLocalStorage();
+      // Remove the task from localStorage:
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      let index = tasks.indexOf(inputValue);
+      if (index > -1) {
+        tasks.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      }
     });
 
     // Add class "delete" from css:
@@ -54,7 +60,12 @@ $(document).ready(function() {
     li.append(crossOutButton);
     crossOutButton.on("click", function() {
       li.remove();
-      updateLocalStorage();
+      let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      let index = tasks.indexOf(task);
+      if (index > -1) {
+        tasks.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      }
     });
   });
 });
@@ -68,12 +79,6 @@ function updateLocalStorage() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-let clearButton = $('<button>Clear All</button>');
-$('#list-container').append(clearButton);
-clearButton.on("click", function() {
-  $('#list').empty();
-  localStorage.clear();
-});
-
-// Reorder of items:
-$('#list').sortable();
+  // Reorder of items:
+  $('#list').sortable();
+  
