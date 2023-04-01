@@ -1,48 +1,75 @@
+:root {
+	--font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+	--background-color: #0f072c;
+	--color1: black;
+	--color2: white;
+	--color3: rgb(247, 206, 206);
+	--color4: rgb(198, 221, 235);
+	--container-color:  rgb(224, 245, 247);
+	--font-size: 20px;
+	--font-size2: 14px;
+  }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
-
-body {
-font-family:'Lucida Sans', 'Lucida Sans Regular', Verdana, sans-serif ;
-background: white;
+* {
+	background-color: var(--background-color);
+	font-family: var(--font-family);
 }
 
-.container{
-padding: 20px;
-width: 300px;
-height: fit-content;
-margin: 0 auto;
-margin-top: 40px;
-border-radius: 20px;
-border: 1px solid black;
+h2, em, p {
+background-color: var(--container-color);
+text-align: center;
+}
+
+.container {
+	background-color: var(--container-color);
+	padding: 20px;
+	width: 300px;
+	height: fit-content;
+	margin: 0 auto;
+	margin-top: 40px;
+	border-radius: 20px;
 }
 
 form {
-display: inline-block;
+	background-color: var(--container-color);
+	display: inline-block;
 }
 
 input{
-padding: 4px 60px 4px 5px;
+	background-color: var(--color2);
+	padding: 4px 60px 4px 5px;
+	border-radius: 5px;
 }
 
 #button{
-display: inline-block;
-background-color:#9e3355;
-color:#ffffff;
-border-radius: 5px;
-text-align:center;
-margin-top:2px;
-padding: 5px 15px;
+	display: inline-block;
+	background-color: var(--background-color);
+	color:var(--color2);
+	border-radius: 5px;
+	text-align:center;
+	margin-top:2px;
+	padding: 5px 15px;
 }
 
 #button:hover{
-cursor: pointer;
-opacity: .8;}
+	cursor: pointer;
+	opacity: .8;}
 
-ol {padding-left: 20px;}
+ol, ol li, li {
+	background-color: var(--container-color);
+}
 
-ol li {padding: 5px;color:#000;}
+ol {
+	padding-left: 20px;
+}
 
-ol li:nth-child(even){background: white;}
+ol li {
+	padding: 5px;
+}
+
+ol li:nth-child(even){
+	background: var(--color4);
+}
 
 .strike{text-decoration: line-through;}
 
@@ -50,14 +77,10 @@ li:hover{
   cursor: pointer;
  }
 
-.delete {
-	display: none;
-}
-
 li > crossOutButton {
-	background: none;
+	background-color: var(--color3);
 	float: right;
-	color:black;
-	font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-	font-weight: 800;
+	color:var(--color1);
+	border-radius: 2.5px;
+	padding: 1px;
 }

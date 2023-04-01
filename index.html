@@ -9,11 +9,14 @@
 </head>
 
 <body>
+	
 	<div class="container">
-		<h2>To-do List</h2>
+		<div id="current-date"></div>
+		<div id="current-time"></div>
+		<h2>Add task</h2>
 		<p><em> Double click to mark an item off, click on "X" to delete an item, and drag items to reorder.</em></p>
-       
-		<form name="toDoList">
+		
+		<form name="toDoList" id="todo_form">
 			<input type="text" name="ListItem" id="input"/>
 		</form>
     
@@ -21,6 +24,9 @@
 		<br/>
 		<ol id="list"></ol>
   </div>
+  
+
+
   <script src="js/jquery.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
