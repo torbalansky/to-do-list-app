@@ -1,3 +1,18 @@
+const currentDate = document.createElement('div');
+currentDate.setAttribute('id', 'current-date');
+document.querySelector('.container').insertAdjacentElement('afterbegin', currentDate);
+
+function updateDate() {
+  const date = new Date();
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const formattedDate = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  currentDate.innerHTML = `Today is ${formattedDate}`;
+}
+
+updateDate();
+
+setInterval(updateDate, 1000);
+
 function newItem() {
   // Add new item to the list:
   let inputValue = $('#input').val();

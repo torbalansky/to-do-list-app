@@ -17,6 +17,10 @@
 	font-family: var(--font-family);
 }
 
+#current-date {
+	background-color: var(--container-color);
+}
+
 h1 {
 	text-decoration: underline;
 }
