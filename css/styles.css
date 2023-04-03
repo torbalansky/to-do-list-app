@@ -27,6 +27,7 @@ h1 {
 
 h1, em, p {
 background-color: var(--container-color);
+font-size: 30px;
 text-align: center;
 }
 
