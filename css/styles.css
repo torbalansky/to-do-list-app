@@ -41,7 +41,8 @@ text-align: center;
 
 form {
 	background-color: var(--container-color);
-	display: inline-block;
+	display: block;
+	text-align: center;
 }
 
 input{
@@ -51,13 +52,15 @@ input{
 }
 
 #button{
-	display: inline-block;
+	display: block;
 	background-color: var(--color6);
 	color:var(--color2);
 	border-radius: 5px;
 	text-align: center;
-	margin-top:2px;
-	padding: 5px 15px;
+	margin: auto;
+	margin-top: 10px;
+	width: 50px;
+	padding: 5px;
 }
 
 #button:hover{
