@@ -61,6 +61,15 @@ function newItem() {
   }
 }
 
+// Add event listener to the input field to detect Enter key press:
+$('#input').keypress(function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault(); // Prevent default form submit behavior
+    newItem();
+    $('#input').val(''); // Clear input field after adding task
+  }
+});
+
 // Load tasks from localStorage when the page loads:
 $(document).ready(function() {
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
