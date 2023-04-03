@@ -47,7 +47,7 @@ form {
 
 input{
 	background-color: var(--color2);
-	padding: 4px 60px 4px 5px;
+	padding: 4px 100px 4px 5px;
 	border-radius: 5px;
 }
 
@@ -59,7 +59,7 @@ input{
 	text-align: center;
 	margin: auto;
 	margin-top: 10px;
-	width: 50px;
+	width: 80px;
 	padding: 5px;
 }
 
