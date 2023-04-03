@@ -1,12 +1,13 @@
 :root {
-	--font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+	--font-family: 'Delicious Handrawn', cursive, sans-serif;
 	--background-color: #0f072c;
 	--color1: black;
 	--color2: white;
 	--color3: rgb(247, 206, 206);
-	--color4: rgb(198, 221, 235);
-	--color5: red;
-	--container-color:  rgb(224, 245, 247);
+	--color4: rgb(245, 248, 206);
+	--color5: rgb(114, 114, 114);
+	--color6: orange;
+	--container-color:  rgb(240, 252, 254);
 	--font-size: 20px;
 	--font-size2: 14px;
   }
@@ -16,7 +17,11 @@
 	font-family: var(--font-family);
 }
 
-h2, em, p {
+h1 {
+	text-decoration: underline;
+}
+
+h1, em, p {
 background-color: var(--container-color);
 text-align: center;
 }
@@ -24,10 +29,9 @@ text-align: center;
 .container {
 	background-color: var(--container-color);
 	padding: 20px;
-	width: 300px;
+	width: 310px;
 	height: fit-content;
-	margin: 0 auto;
-	margin-top: 40px;
+	margin: auto;
 	border-radius: 20px;
 }
 
@@ -38,16 +42,16 @@ form {
 
 input{
 	background-color: var(--color2);
-	padding: 4px 60px 4px 5px;
+	padding: 4px 40px 4px 5px;
 	border-radius: 5px;
 }
 
 #button{
 	display: inline-block;
-	background-color: var(--background-color);
+	background-color: var(--color6);
 	color:var(--color2);
 	border-radius: 5px;
-	text-align:center;
+	text-align: center;
 	margin-top:2px;
 	padding: 5px 15px;
 }
@@ -56,33 +60,36 @@ input{
 	cursor: pointer;
 	opacity: .8;}
 
-ol, ol li, li {
+ol li {
 	background-color: var(--container-color);
+	position: relative;
+	padding: 10px;
 }
 
 ol {
+	background-color: var(--container-color);
 	padding-left: 20px;
 }
 
-ol li {
-	padding: 5px;
-}
-
-ol li:nth-child(even){
+ol li:nth-child(even) {
 	background: var(--color4);
 }
 
 .strike{text-decoration: line-through;}
 
-li:hover{
-  cursor: pointer;
- }
 
 .btn {
 	background-color:var(--color5);
 	color: var(--color2);
 	float: right;
-	border-radius: 10px;
+	border-radius: 6px;
 	cursor: pointer;
 	border:none;
 }
+
+#btn:hover{
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  }

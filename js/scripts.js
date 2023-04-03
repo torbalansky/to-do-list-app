@@ -24,7 +24,7 @@ function newItem() {
     li.on("click", editItem);
  
     // Delete button:
-    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task');
+    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task').attr('contenteditable', false);
     let removeIcon = $('<i></i>').addClass('bi bi-x');
     removeButton.append(removeIcon);
     li.append(removeButton);
@@ -69,7 +69,7 @@ $(document).ready(function() {
     li.on("click", editItem);
 
     // Delete button "X":
-    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task');
+    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task').attr('contenteditable', false);
     let removeIcon = $('<i></i>').addClass('bi bi-x');
     removeButton.append(removeIcon);
     li.append(removeButton);
