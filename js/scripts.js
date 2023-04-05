@@ -39,21 +39,24 @@ function newItem() {
     li.on("click", editItem);
  
     // Delete button:
-    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task').attr('contenteditable', false);
-    let removeIcon = $('<i></i>').addClass('bi bi-x');
+    let removeButton = $('<button></button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task').attr('contenteditable', false);
+    let removeIcon = `<button title="Remove task" class="remove-task"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+    </svg></button>`
     removeButton.append(removeIcon);
     li.append(removeButton);
     removeButton.on("click", function() {
-      if (confirm("Are you sure you want to delete this item?")) {}
+      if (confirm("Are you sure you want to delete this item?")) {
       li.remove();
       // Remove the task from localStorage:
       let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      let index = tasks.indexOf(task);
+      let index = tasks.indexOf(inputValue);
       if (index > -1) {
         tasks.splice(index, 1);
         localStorage.setItem('tasks', JSON.stringify(tasks));
       }
-    });
+    }
+  });
 
     // Save the task to localStorage:
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -94,11 +97,14 @@ $(document).ready(function() {
     li.on("click", editItem);
 
     // Delete button "X":
-    let removeButton = $('<button>X</button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task').attr('contenteditable', false);
-    let removeIcon = $('<i></i>').addClass('bi bi-x');
+    let removeButton = $('<button></button>').addClass('btn btn-danger btn-sm').attr('title', 'Remove the "' + task + '" task').attr('contenteditable', false);
+    let removeIcon = `<button title="Remove task" class="remove-task-local"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+    </svg></button>`
     removeButton.append(removeIcon);
     li.append(removeButton);
     removeButton.on("click", function() {
+      if (confirm("Are you sure you want to delete this item?"))
       li.remove();
       let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
       let index = tasks.indexOf(task);
