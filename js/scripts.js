@@ -44,10 +44,11 @@ function newItem() {
     removeButton.append(removeIcon);
     li.append(removeButton);
     removeButton.on("click", function() {
+      if (confirm("Are you sure you want to delete this item?")) {}
       li.remove();
       // Remove the task from localStorage:
       let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      let index = tasks.indexOf(inputValue);
+      let index = tasks.indexOf(task);
       if (index > -1) {
         tasks.splice(index, 1);
         localStorage.setItem('tasks', JSON.stringify(tasks));
