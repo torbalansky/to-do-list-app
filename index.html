@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>ToDoListApp</title>
-	<link rel="shortcut icon" href="./img/icons8-checkmark-sf-black-filled-16.png">
+	<link rel="shortcut icon" href="./img/favicon_todo_app.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-e8CFsFSs7N/mZfusA3l2wprT/3yzqlL//y/PT3Jqzsfn8VRMGMccIjZ+np/cLpGnmYZO+jzHyV1fkfFDL9t9Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-	
+	<header>
+		<div class="container-header">
+			<ul class="top-panel">
+			  <li id="current-date"></li>
+			  <li>toDO</li>
+			  <li id="current-time"></li>
+			</ul>
+		  </div>
+	</header>
 	<div class="container">
-		<div id="current-date"></div>
-		<div id="current-time"></div>
-		<h1>2Do List</h1>
-		<p><em> One click to edit a task or double click to mark an item off. Click on "X" to delete an item, and drag items to reorder.</em></p>
-		
+		<h3> One click - edit task; double click - mark an item off; drag items - reorder.</h3>
 		<form name="toDoList" id="todo_form">
-			<input type="text" name="ListItem" id="input"/>
+			<input type="text" name="ListItem" id="input" placeholder="e.g. buy veggies"/>
 		</form>
-    
 		<div onclick="newItem()" id="button">Add task</div>
 		<br/>
 		<ol id="list"></ol>
   </div>
-  
-
-
   <script src="js/jquery.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
   integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
