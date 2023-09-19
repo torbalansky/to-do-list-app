@@ -15,9 +15,9 @@ This is a simple to-do list app that I built as one of my first coding projects.
 [Visit my to-do-list app](https://torbalansky.github.io/to-do-list-app/)
 
 ### Technologies Used
-HTML
-CSS
-JavaScript
-jQuery
-Local Storage
-Happy task managing!
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- Local Storage
+- Happy task managing!
